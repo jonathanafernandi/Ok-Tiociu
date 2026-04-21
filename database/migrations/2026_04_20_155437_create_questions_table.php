@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('quiz_id')->constrained()->cascadeOnDelete();
             $table->text('question_text');
+            $table->enum('question_type', ['PG', 'IS', 'AU']);
             $table->string('audio_path')->nullable();
             $table->timestamps();
         });
