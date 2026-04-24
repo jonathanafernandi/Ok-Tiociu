@@ -1,0 +1,370 @@
+/* Hero Section */
+.hero-section {
+    background-color: var(--ok-bg);
+    padding: 3rem;
+    min-height: calc(100vh - 57px); /* 57px navbar */
+    display: flex;
+    align-items: center;
+}
+
+.hero-text {
+    padding-right: 2rem;
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-start; */
+}
+
+.hero-title {
+    font-size: clamp(1.625rem, 2vw + 1rem, 2.5rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: #000;
+    margin-bottom: 1.25rem;
+}
+
+.text-ok-red {
+    color: var(--ok-red);
+}
+
+.hero-desc {
+    font-size: 1.125rem;
+    color: #6B6B6B;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    /* max-width: 480px; */
+    font-weight: 500;
+}
+
+/* Hero buttons */
+.hero-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    width: 400px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.btn-hero-primary,
+.btn-hero-secondary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.btn-hero-primary {
+    background-color: var(--ok-red);
+    color: #fff;
+    border: 2px solid var(--ok-red);
+}
+
+.btn-hero-primary:hover {
+    background-color: var(--ok-red-hover);
+    border-color: var(--ok-red-hover);
+    color: #fff;
+}
+
+.btn-hero-secondary {
+    background-color: #fff;
+    color: var(--ok-red);
+    border: 2px solid #E2E8F0;
+}
+
+.btn-hero-secondary:hover {
+    background-color: #F1F5F9;
+    color: var(--ok-red-hover);
+    border-color: #CBD5E1;
+}
+
+.hero-image-wrap {
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 540px;
+    height: auto;
+}
+
+/* Hero: mobile logo */
+.hero-logo-mobile {
+    display: none;
+    justify-content: center;
+}
+
+.hero-logo-mobile-img {
+    height: 153.72px;
+}
+
+@media (max-width: 521.98px) {
+    .hero-logo-mobile-img {
+        height: clamp(97.72px, 28vw, 153.72px);
+    }
+}
+
+/* Custom breakpoint on 984px for hero layout */
+@media (max-width: 983.98px) {
+    .col-hero-split {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .d-hero-flex {
+        display: none !important; /* hide right logo column */
+    }
+
+    .hero-logo-mobile {
+        display: flex; /* display logo on top of texts */
+    }
+
+    /* .hero-section {
+        min-height: auto;
+        padding: 2.5rem 1.5rem;
+    } */
+
+    .hero-text {
+        padding-right: 0;
+        padding-top: 0;
+        text-align: center;
+    }
+
+    /* .hero-cta {
+        margin: 0 auto;
+        width: 100%;
+    } */
+}
+
+/* Di atas 984px: col teks pakai 50%, logo mobile disembunyikan */
+@media (min-width: 984px) {
+    .col-hero-split {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .d-hero-flex {
+        display: flex !important;   /* tampilkan kolom gambar kanan */
+    }
+
+    .hero-logo-mobile {
+        display: none !important;   /* sembunyikan logo mobile */
+    }
+}
+/* Mobile (< 992px): Hero Section
+@media (max-width: 991.98px) {
+    .hero-section {
+        padding: 2.5rem 1.5rem;
+        min-height: auto; (remove full-screen in mobile)
+        align-items: flex-start;
+    }
+
+    .hero-text {
+        padding-right: 0; (remove left padding)
+        text-align: center;
+    }
+
+    .hero-cta {
+        margin: 0 auto; (stays in the center)
+        width: 100%;
+    }
+} */
+
+/* Fitur Section */
+.fitur-section {
+    background-color: #fff;
+    padding: 3rem;
+    min-height: calc(100vh - 57px - 61px); /* 57px navbar + 61px footer */
+    display: flex;
+    align-items: center;
+}
+
+.fitur-title {
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 1.5rem;
+}
+
+.fitur-subtitle {
+    font-size: 1.125rem;
+    color: #6B6B6B;
+    max-width: 1152px;
+    margin: 0 auto;
+    font-weight: 500;
+}
+
+/* Fitur cards row */
+.fitur-cards-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 3.75rem;
+    row-gap: 3.75rem;
+}
+
+/* Every card column */
+.fitur-card-col {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 auto;
+}
+
+/* >=1180px: 4 cards in a row */
+/* @media (min-width: 1180px) {
+    .fitur-cards-row {
+        flex-wrap: nowrap;
+    }
+} */
+
+/* <1180px to >=680px: 2+2 cards */
+@media (max-width: 1179.98px) and (min-width: 680px) {
+    .fitur-cards-row {
+        /* Row width = 2 card (220px) + 1 gap (3.75rem) */
+        width: calc(440px + 3.75rem);
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* <680px: 1 card per row */
+@media (max-width: 679.98px) {
+    .fitur-cards-row {
+        column-gap: 0;
+        width: 220px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* Fitur cards */
+.fitur-card {
+    width: 220px;
+    height: 264px;
+    border-radius: 8px;
+    padding: 1.875rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Red cards */
+.fitur-card-red {
+    background-color: var(--ok-red);
+    border: 2px solid var(--ok-red-hover);
+    color: #fff;
+}
+
+.fitur-card-red .fitur-name {
+    color: #fff;
+}
+
+.fitur-card-red .fitur-desc {
+    color: #fff;
+}
+
+/* Light cards */
+.fitur-card-light {
+    background-color: var(--ok-bg);
+    border: 2px solid var(--ok-red);
+    color: var(--ok-red);
+}
+
+.fitur-card-light .fitur-name {
+    color: var(--ok-red);
+}
+
+.fitur-card-light .fitur-desc {
+    color: var(--ok-red);
+}
+
+/* Icons — light background */
+.fitur-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    flex-shrink: 0;
+}
+
+.fitur-icon-light {
+    background-color: var(--ok-bg);
+}
+
+.fitur-icon-light i {
+    font-size: 1.75rem;
+    color: #000;
+}
+
+/* Icons — dark background */
+.fitur-icon-dark {
+    background-color: #000;
+}
+
+.fitur-icon-dark i {
+    font-size: 1.75rem;
+    color: #fff;
+}
+
+.fitur-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.fitur-desc {
+    font-size: 0.9rem;
+    color: #000;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+/* [Mobile (< 992px): Fitur Section]
+@media (max-width: 991.98px) {
+    .fitur-section {
+        padding: 2.5rem 1.5rem;
+        min-height: auto;
+    }
+
+    .fitur-card {
+        width: 160px;
+        height: auto;
+        padding: 1.25rem 1rem;
+    }
+}
+
+[Very small screen (< 480px): Fitur cards]
+@media (max-width: 479.98px) {
+    .fitur-card {
+        width: 140px;
+        padding: 1rem 0.75rem;
+    }
+
+    .fitur-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .fitur-icon-light i,
+    .fitur-icon-dark i {
+        font-size: 1.4rem;
+    }
+
+    .fitur-name {
+        font-size: 1rem;
+    }
+} */

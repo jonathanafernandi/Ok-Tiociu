@@ -1,0 +1,182 @@
+/* Global styles for Ok! Tiociu */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-x: clip;
+    background-color: var(--ok-bg);
+    overscroll-behavior: none;
+}
+
+body {
+    overflow-x: clip;
+    font-family: 'Rubik', sans-serif;
+}
+
+:root {
+    --ok-red: #C1121F;
+    --ok-red-hover: #A40F1A;
+    --ok-bg: #FEF6F0;
+}
+
+/* Navbar */
+.navbar-brand img {
+    height: 48px;
+}
+
+.nav-link {
+    color: #000 !important;
+    font-weight: 500;
+    /* padding: 0.5rem 1rem !important; */
+    padding: 0 0 2px 0 !important;
+}
+
+.nav-link.active {
+    color: var(--ok-red) !important;
+    border-bottom: 2px solid var(--ok-red);
+    padding-bottom: 0 !important;
+}
+
+.nav-link:hover {
+    /* color: var(--ok-red) !important; */
+    border-bottom: 2px solid;
+    padding-bottom: 0 !important;
+}
+
+/* Mobile nav links */
+@media (max-width: 991.98px) {
+    .navbar-nav .nav-item {
+        padding: 0.35rem 0;
+    }
+
+    /* .nav-link:hover {
+        border-bottom: none !important;
+    }
+
+    .nav-link.active {
+        border-bottom: none !important;
+        font-weight: 700;
+        padding-bottom: 2px !important;
+    } */
+}
+
+/* Primary button */
+.btn-ok-primary {
+    background-color: var(--ok-red);
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.btn-ok-primary:hover {
+    background-color: var(--ok-red-hover);
+    color: #fff;
+}
+
+/* Secondary button (red outline) */
+.btn-ok-secondary {
+    background-color: #fff;
+    border: 2px solid #E2E8F0;
+    color: var(--ok-red);
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.btn-ok-secondary:hover {
+    background-color: #F1F5F9;
+    color: #A40F1A;
+    border: 2px solid #CBD5E1;
+}
+
+/* Red link text */
+.link-ok {
+    color: #000;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.link-ok:hover {
+    color: var(--ok-red-hover);
+    text-decoration: underline;
+}
+
+/* Custom checkbox */
+/* Unchecked, Default */
+.form-check-input[type="checkbox"] {
+    border-color: rgba(33, 37, 41, 0.749); /* #212529 74.9% */
+    background-color: #fff;
+    box-shadow: none !important;
+}
+
+/* Unchecked, Hover */
+.form-check-input[type="checkbox"]:hover {
+    border-color: #191C1F;
+    background-color: #fff;
+    box-shadow: none !important;
+}
+
+/* Checked, Default */
+.form-check-input[type="checkbox"]:checked {
+    border-color: var(--ok-red);
+    background-color: var(--ok-red);
+    box-shadow: none !important;
+}
+
+/* Checked, Hover */
+.form-check-input[type="checkbox"]:checked:hover {
+    border-color: var(--ok-red-hover);
+    background-color: var(--ok-red-hover);
+    box-shadow: none !important;
+}
+
+/* Hide Bootstrap focus ring */
+.form-check-input[type="checkbox"]:focus {
+    box-shadow: none !important;
+    border-color: rgba(33, 37, 41, 0.749);
+}
+
+.form-check-input[type="checkbox"]:checked {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+
+/* Modal close button */
+.modal .btn-close:focus {
+    box-shadow: none;
+}
+
+/* Lock page scroll when modal is opened */
+html:has(.modal.show) {
+    overflow-y: hidden;
+}
+
+/* Footer */
+.footer-ok {
+    background-color: #fff;
+    border-top: 1px solid rgb(222, 226, 230);
+    font-size: 1.125rem;
+    color: #000;
+    font-weight: 600;
+}
+
+.footer-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: var(--ok-red);
+    /* text-decoration: underline; */
+}
