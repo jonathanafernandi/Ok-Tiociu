@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BelajarController;
+use App\Http\Controllers\KuisController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -17,6 +19,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/belajar', [BelajarController::class, 'index'])->name('belajar.index');
+    Route::get('/belajar/{topic}', [BelajarController::class, 'show'])->name('belajar.show');
+    Route::get('/belajar/{topic}/kuis', [KuisController::class, 'show'])->name('belajar.kuis');
 });
 
 require __DIR__.'/auth.php';

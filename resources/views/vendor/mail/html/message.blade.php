@@ -21,7 +21,7 @@
 {{-- Footer --}}
 <x-slot:footer>
 <x-mail::footer>
-{{ date('Y') }} {{ config('app.name') }} &nbsp;•&nbsp; <a href="mailto:{{ config('mail.from.address') }}" style="color: inherit;">{{ config('mail.from.address') }}</a>
+{{ date('Y') }} {{ config('app.name') }} &nbsp;&bull;&nbsp; <a href="mailto:{{ config('mail.from.address') }}" style="color: inherit;">{{ config('mail.from.address') }}</a>
 </x-mail::footer>
 </x-slot:footer>
 </x-mail::layout>

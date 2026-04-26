@@ -34,12 +34,12 @@
                     <div class="hero-cta">
                         @auth
                             {{-- Logged in --}}
-                            <a href="#" class="btn-hero-primary">
-                                Mulai Belajar &rarr;
-                            </a>
-                            {{-- <a href="{{ route('belajar.index') }}" class="btn-hero-primary">
+                            {{-- <a href="#" class="btn-hero-primary">
                                 Mulai Belajar &rarr;
                             </a> --}}
+                            <a href="{{ route('belajar.index') }}" class="btn-hero-primary">
+                                Mulai Belajar &rarr;
+                            </a>
                         @else
                             {{-- Not yet logged in --}}
                             <a href="{{ route('login') }}" class="btn-hero-primary">

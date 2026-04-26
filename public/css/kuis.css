@@ -1,0 +1,484 @@
+/* Kuis - wrapper & layout */
+.kuis-wrapper {
+    background-color: var(--ok-bg);
+    min-height: calc(100vh - 57px);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 3rem;
+}
+
+/* Top bar (tombol X + progress bar) */
+.kuis-topbar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 1152px;
+    width: 100%;
+    margin: 0 auto 2.5rem;
+    /* padding: 0.875rem 1.5rem; */
+    background-color: var(--ok-bg);
+}
+
+.kuis-topbar .btn-close:focus {
+    box-shadow: none;
+}
+/* .kuis-exit-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #000;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    flex-shrink: 0;
+    padding: 0;
+    transition: background-color 0.15s;
+}
+
+.kuis-exit-btn:hover { 
+    background-color: #e8dfd8; 
+} */
+
+.kuis-progress-bar {
+    flex: 1;
+    height: 16px;
+    background-color: #e0d6ce;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.kuis-progress-fill {
+    height: 100%;
+    background-color: var(--ok-red);
+    border-radius: 12px;
+    transition: width 0.4s ease;
+}
+
+/* Main content area */
+.kuis-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 2.5rem;
+    max-width: 1152px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Question card */
+.kuis-question-card {
+    background-color: #fff;
+    border-radius: 12px;
+    width: 100%;
+    min-height: 225px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.kuis-question-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* AU play button */
+.kuis-audio-btn {
+    background-color: var(--ok-red);
+    border: none;
+    border-radius: 12px;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 2.5rem;
+    margin-top: 1.5rem;
+    transition: background-color 0.15s;
+}
+
+.kuis-audio-btn:hover { 
+    background-color: var(--ok-red-hover); 
+}
+
+.kuis-audio-btn:active {
+    transform: scale(0.91);
+    background-color: var(--ok-red-hover);
+}
+
+.kuis-audio-btn.playing {
+    background-color: var(--ok-red-hover);
+    transform: scale(0.96);
+}
+
+/* Answer choices grid */
+.kuis-answers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    width: 100%;
+}
+
+.kuis-answer-btn {
+    background-color: #fff;
+    border: 2px solid var(--ok-red);
+    color: var(--ok-red);
+    border-radius: 8px;
+    padding: 1.25rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+    font-family: inherit;
+    word-break: break-word;
+    line-height: 1.3;
+}
+
+.kuis-answer-btn:hover {
+    background-color: #F1F5F9;
+    border-color: var(--ok-red-hover);
+}
+
+.kuis-answer-btn.selected {
+    background-color: var(--ok-red);
+    color: #fff;
+    border-color: var(--ok-red);
+}
+
+/* Tombol Jawab */
+.kuis-submit-wrap {
+    width: 100%;
+    max-width: 500px;
+}
+
+.kuis-submit-btn {
+    width: 100%;
+    background-color: var(--ok-red);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    font-family: inherit;
+}
+
+.kuis-submit-btn:disabled {
+    background-color: #E9ECEF;
+    color: #94A3B8;
+    cursor: not-allowed;
+}
+
+.kuis-submit-btn:not(:disabled):hover { 
+    background-color: var(--ok-red-hover); 
+}
+
+/* Feedback bar (bottom) */
+.kuis-feedback {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 50;
+    gap: 1.5rem;
+}
+
+.kuis-feedback-correct { 
+    background-color: #D7FFB8; 
+}
+
+.kuis-feedback-wrong { 
+    background-color: #FFDFE0; 
+}
+
+.kuis-feedback-left {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.kuis-feedback-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.52rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.kuis-feedback-correct .kuis-feedback-icon i {
+    color: #16A34A;
+    font-size: 2.79rem;
+    -webkit-text-stroke: 2px #16A34A;
+}
+
+.kuis-feedback-wrong .kuis-feedback-icon i {
+    color: #EA2B2B;
+    font-size: 2.52rem;
+    -webkit-text-stroke: 2px #EA2B2B;
+}
+/* .kuis-feedback-icon {
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.kuis-feedback-correct .kuis-feedback-icon { 
+    color: #16A34A; 
+}
+
+.kuis-feedback-wrong .kuis-feedback-icon { 
+    color: #EA2B2B; 
+} */
+
+.kuis-feedback-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.kuis-feedback-correct .kuis-feedback-title { 
+    color: #58A700; 
+}
+
+.kuis-feedback-wrong .kuis-feedback-title { 
+    color: #EA2B2B; 
+}
+
+.kuis-feedback-correct-hint {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+    margin-top: 0.25rem;
+}
+
+.kuis-feedback-next {
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    flex-shrink: 0;
+    transition: background-color 0.15s;
+}
+
+.kuis-feedback-next-correct {
+    background-color: #58CC02;
+    color: #fff;
+}
+
+.kuis-feedback-next-correct:hover { 
+    background-color: #4FB102; 
+}
+
+.kuis-feedback-next-wrong {
+    background-color: #FF4B4B;
+    color: #fff;
+}
+
+.kuis-feedback-next-wrong:hover { 
+    background-color: #E04242; 
+}
+
+/* Modal overlay
+.kuis-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.kuis-dialog {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.75rem;
+    max-width: 420px;
+    width: 90%;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+.kuis-dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.kuis-dialog-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 0;
+    color: #000;
+}
+
+.kuis-dialog-close {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #000;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    padding: 0;
+    transition: background-color 0.15s;
+}
+
+.kuis-dialog-close:hover { 
+    background-color: #F1F5F9; 
+}
+
+.kuis-dialog-body {
+    font-size: 0.9rem;
+    color: #000;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+(Dialog buttons)
+.kuis-btn-dialog-primary {
+    display: block;
+    width: 100%;
+    background-color: var(--ok-red);
+    color: #fff !important;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none !important;
+    font-family: inherit;
+    transition: background-color 0.15s;
+    margin-bottom: 0.625rem;
+}
+
+.kuis-btn-dialog-primary:hover { 
+    background-color: var(--ok-red-hover); 
+}
+
+.kuis-btn-dialog-secondary {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    color: var(--ok-red) !important;
+    border: 2px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 0.625rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none !important;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+
+.kuis-btn-dialog-secondary:hover {
+    background-color: #F1F5F9;
+    border-color: #CBD5E1;
+}
+
+(Latihan Selesai — Topic Label)
+.kuis-done-topic {
+    color: var(--ok-red);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.kuis-done-topic:hover { 
+    text-decoration: underline; 
+} */
+
+/* Responsive */
+@media (max-width: 767.98px) {
+    .kuis-answers-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .kuis-feedback { 
+        padding: 1rem 1.25rem; 
+    }
+}
+
+@media (max-width: 479.98px) {
+    /* .kuis-main { 
+        padding: 1rem 1rem 5.5rem; 
+    } */
+
+    /* .kuis-topbar { 
+        padding: 0.75rem 0.875rem; 
+    } */
+
+    /* .kuis-answers-grid { 
+        gap: 0.75rem; 
+    } */
+
+    .kuis-question-card {
+        min-height: 180px;
+    }
+
+    .kuis-question-text { 
+        font-size: 1rem; 
+    }
+
+    .kuis-audio-btn {
+        width: 57.6px;
+        height: 57.6px;
+    }
+
+    .kuis-answer-btn {
+        min-height: 80px;
+    }
+
+    .kuis-feedback {
+        gap: 1rem;
+    }
+
+    .kuis-feedback-left {
+        gap: 1rem;
+    }
+
+    .kuis-feedback-title {
+        font-size: 1rem;
+    }
+}
