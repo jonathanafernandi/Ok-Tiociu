@@ -65,8 +65,8 @@
                             <a href="{{ route('belajar.index') }}" class="nav-link {{ request()->routeIs('belajar*') ? 'active' : '' }}">Belajar</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link {{ request()->routeIs('forum*') ? 'active' : '' }}">Forum</a>
-                            {{-- <a href="{{ route('forum.index') }}" class="nav-link {{ request()->routeIs('forum*') ? 'active' : '' }}">Forum</a> --}}
+                            {{-- <a href="#" class="nav-link {{ request()->routeIs('forum*') ? 'active' : '' }}">Forum</a> --}}
+                            <a href="{{ route('forum.index') }}" class="nav-link {{ request()->routeIs('forum*') ? 'active' : '' }}">Forum</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link {{ request()->routeIs('profil*') ? 'active' : '' }}">Profil</a>
@@ -111,11 +111,34 @@
         </div>
     </main> --}}
 
-    {{-- Modal (called from the required page)
-    @yield('modal') --}}
+    {{-- Modal (called from the required page) --}}
+    @yield('modal')
 
     {{-- Bootstrap JS --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function convertTimestamps() {
+            document.querySelectorAll('.local-time').forEach(function (el) {
+                const utc = el.getAttribute('data-utc');
+                if (!utc) {
+                    return;
+                }
+                const date = new Date(utc);
+                el.textContent = date.toLocaleString('id-ID', {
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: false,
+                }).replace(',', '').replace(':', '.');
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', convertTimestamps);
+        window.addEventListener('pageshow', convertTimestamps);
+    </script>
 
     {{-- Additional scripts per page --}}
     @yield('scripts')

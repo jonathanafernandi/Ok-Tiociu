@@ -164,7 +164,7 @@
                 // Render question card
                 if (question.question_type === 'AU') {
                     questionCard.innerHTML = `
-                        <p class="kuis-question-text">${escHtml(question.question_text)}</p>
+                        <p class="kuis-question-text">${highlightQuotes(question.question_text)}</p>
                         <button class="kuis-audio-btn" id="audioPlayBtn" aria-label="Putar audio">
                             <i class="bi bi-volume-up-fill"></i>
                         </button>
@@ -180,7 +180,7 @@
                     });
                 } else {
                     // PG & IS
-                    questionCard.innerHTML = `<p class="kuis-question-text">${escHtml(question.question_text)}</p>`;
+                    questionCard.innerHTML = `<p class="kuis-question-text">${highlightQuotes(question.question_text)}</p>`;
                 }
 
                 // Render answer choices
@@ -242,7 +242,7 @@
                     if (question.question_type === 'AU' && question.correct_tiociu) {
                         correctText += ' (' + question.correct_tiociu + ')';
                     }
-                    feedbackHint.textContent = 'Jawaban yang benar: ' + correctText;
+                    feedbackHint.innerHTML = 'Jawaban yang benar: <span style="color: var(--ok-red); font-weight: 600">' + escHtml(correctText) + '</span>';
                     feedbackHint.style.display = 'block';
                     btnNext.className = 'kuis-feedback-next kuis-feedback-next-wrong';
                 }
@@ -278,6 +278,20 @@
                 const div = document.createElement('div');
                 div.appendChild(document.createTextNode(str));
                 return div.innerHTML;
+            }
+
+            // Highlight vocabularies
+            function highlightQuotes(string) {
+                const escaped = escHtml(string);
+                return escaped.replace(
+                    /(\u201c([^\u201d]*)\u201d)|(&quot;([^&]*)&quot;)|("([^"]*)")/g,
+                    function(match, cG, cInner, qG, qInner, sG, sInner) {
+                        const inner = cInner ?? qInner ?? sInner ?? '';
+                        const open = cG ? '\u201c' : '"';
+                        const close = cG ? '\u201d' : '"';
+                        return open + '<span style="color:var(--ok-red)">' + inner + '</span>' + close;
+                    }
+                );
             }
 
             // Event listeners

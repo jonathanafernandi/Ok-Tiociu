@@ -113,6 +113,55 @@ body {
     text-decoration: underline;
 }
 
+/* Form label */
+.form-label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #000;
+}
+
+/* Form input */
+.form-control {
+    border: 1.5px solid #DEE2E6;
+    border-radius: 8px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus {
+    border-color: rgba(33, 37, 41, 0.749);
+    box-shadow: none;
+}
+
+.form-control.is-invalid {
+    border-color: var(--ok-red);
+}
+
+.form-control.is-invalid:focus {
+    box-shadow: none;
+}
+
+/* Divider "atau" */
+.divider-atau {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #000;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    font-weight: 500;
+}
+
+.divider-atau::before,
+.divider-atau::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #DEE2E6;
+    border-radius: 2px;
+}
+
 /* Custom checkbox */
 /* Unchecked, Default */
 .form-check-input[type="checkbox"] {
@@ -145,11 +194,15 @@ body {
 /* Hide Bootstrap focus ring */
 .form-check-input[type="checkbox"]:focus {
     box-shadow: none !important;
-    border-color: rgba(33, 37, 41, 0.749);
+    /* border-color: rgba(33, 37, 41, 0.749); */
 }
 
 .form-check-input[type="checkbox"]:checked {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+
+.form-check-label {
+    font-size: 0.9rem;
 }
 
 /* Modal close button */
