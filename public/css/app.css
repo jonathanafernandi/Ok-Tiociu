@@ -15,6 +15,7 @@ html {
 body {
     overflow-x: clip;
     font-family: 'Rubik', sans-serif;
+    background-color: var(--ok-bg);
 }
 
 :root {
@@ -111,6 +112,24 @@ body {
 .link-ok:hover {
     color: var(--ok-red-hover);
     text-decoration: underline;
+}
+
+/* Authentication card */
+.auth-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 540px;
+    padding: 3rem;
+}
+
+/* Auth card */
+@media (max-width: 575.98px) {
+    .auth-card {
+        padding: 1.5rem;
+        /* border-radius: 12px; */
+    }
 }
 
 /* Form label */

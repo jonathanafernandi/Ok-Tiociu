@@ -5,27 +5,9 @@ body {
     /* min-height: 100vh; */
 }
 
-/* Authentication card */
-.auth-card {
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 540px;
-    padding: 3rem;
-}
-
 /* Logo in the card */
 .auth-logo {
     height: 96px;
-}
-
-/* Auth card */
-@media (max-width: 575.98px) {
-    .auth-card {
-        padding: 1.5rem;
-        /* border-radius: 12px; */
-    }
 }
 
 /* ── Logo auth: perkecil di layar sangat kecil ── */

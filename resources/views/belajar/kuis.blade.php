@@ -56,7 +56,7 @@
                         <a href="{{ route('belajar.show', $topic) }}" class="btn-ok-primary d-block text-center text-decoration-none mb-2">
                             Keluar dari Latihan
                         </a>
-                        <button class="btn-ok-secondary w-100" type="button" data-bs-dismiss="modal">
+                        <button class="btn-ok-secondary w-100 mt-1" type="button" data-bs-dismiss="modal">
                             Lanjutkan Latihan
                         </button>
                     </div>

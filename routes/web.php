@@ -7,6 +7,7 @@ use App\Http\Controllers\KuisController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\ProfilController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -41,6 +42,14 @@ Route::middleware('auth')->group(function () {
     Route::post('/forum/{post}/suka', [LikeController::class, 'toggle'])->name('forum.suka.toggle');
     // Suka komentar
     Route::post('/forum/{post}/komentar/{comment}/suka', [LikeController::class, 'toggleComment'])->name('forum.komentar.suka.toggle');
+
+    // Profil
+    Route::get('/profil', [ProfilController::class, 'index'])->name('profil.index');
+    Route::patch('/profil', [ProfilController::class, 'update'])->name('profil.update');
+    Route::get('/profil/ubah-password', [ProfilController::class, 'ubahPassword'])->name('profil.ubah-password');
+    Route::post('/profil/kirim-reset-password', [ProfilController::class, 'kirimResetPassword'])->name('profil.kirim-reset-password');
+    Route::patch('/profil/ubah-password', [ProfilController::class, 'simpanPassword'])->name('profil.simpan-password');
+    Route::post('/profil/logout', [ProfilController::class, 'logout'])->name('profil.logout');
 });
 
 require __DIR__.'/auth.php';

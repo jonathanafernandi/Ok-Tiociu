@@ -69,8 +69,8 @@
                             <a href="{{ route('forum.index') }}" class="nav-link {{ request()->routeIs('forum*') ? 'active' : '' }}">Forum</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link {{ request()->routeIs('profil*') ? 'active' : '' }}">Profil</a>
-                            {{-- <a href="{{ route('profil.index') }}" class="nav-link {{ request()->routeIs('profil*') ? 'active' : '' }}">Profil</a> --}}
+                            {{-- <a href="#" class="nav-link {{ request()->routeIs('profil*') ? 'active' : '' }}">Profil</a> --}}
+                            <a href="{{ route('profil.index') }}" class="nav-link {{ request()->routeIs('profil*') ? 'active' : '' }}">Profil</a>
                         </li>
                     @else
                         {{-- User has not logged in --}}
