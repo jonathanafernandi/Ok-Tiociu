@@ -24,11 +24,17 @@ class NewPasswordController extends Controller
      */
     public function create(Request $request): View|RedirectResponse
     {
-        // Validate token when page is opened
-        $tokenValid = DB::table('password_reset_tokens')
+        $record = DB::table('password_reset_tokens')
             ->where('email', $request->email)
-            ->where('created_at', '>=', Carbon::now()->subMinutes(config('auth.passwords.users.expire', 60)))
-            ->exists();
+            ->first();
+
+        $token = $request->route('token') ?? $request->input('token', '');        
+        $tokenValid = $record
+            && $token !== ''
+            && Hash::check($token, $record->token)
+            && Carbon::parse($record->created_at)->gte(
+                Carbon::now()->subMinutes(config('auth.passwords.users.expire', 60))
+            );
         
         if (!$tokenValid) {
             if (Auth::check()) {
@@ -87,11 +93,15 @@ class NewPasswordController extends Controller
                     ->with('status', 'Kata sandi berhasil diperbarui.');
             }
             return redirect()->route('login')
-                ->with('status', 'Kata sandi berhasil diubah, silakan masuk kembali.');
+                ->with('status_reset', 'Kata sandi berhasil diubah, silakan masuk kembali.');
         }
         return back()
             ->withInput($request->only('email'))
-            ->withErrors(['email' => $status]);
+            ->withErrors(['email' => match($status) {
+                Password::INVALID_USER => 'Email tidak sesuai.',
+                Password::INVALID_TOKEN => 'Tautan reset kata sandi invalid atau sudah kedaluwarsa.',
+                default => 'Terjadi kesalahan. Silakan coba lagi.',
+            }]);
         // return $status == Password::PASSWORD_RESET
         //             ? redirect()->route('login')
         //                         ->with('status_reset', 'Kata sandi berhasil diubah, silakan masuk kembali.')

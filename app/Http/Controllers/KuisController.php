@@ -31,7 +31,7 @@ class KuisController extends Controller
                     'id' => $answer->id,
                     'answer_text' => $answer->answer_text,
                     'is_correct' => $answer->is_correct
-                ])->shuffle()->values()
+                ])->shuffle()->values()->toArray()
             ];
         })->shuffle()->values();
 

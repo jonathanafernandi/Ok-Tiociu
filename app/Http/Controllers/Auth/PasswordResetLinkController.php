@@ -42,8 +42,14 @@ class PasswordResetLinkController extends Controller
 
         return $status == Password::RESET_LINK_SENT
                     ? redirect()->route('login')
-                                ->with('status', 'Tautan reset kata sandi telah dikirim ke emailmu!') 
-                    : back()->withInput($request->only('email', '_form'))
-                            ->withErrors(['email' => 'Email ini tidak terdaftar.']);
+                                ->with('status_reset', 'Tautan reset kata sandi telah dikirim ke emailmu!')
+                    : back()->withInput(['forgot_email' => $request->email])
+                            ->withErrors(['email' => 'Email ini tidak terdaftar.'], 'forgot');
+
+        // return $status == Password::RESET_LINK_SENT
+        //             ? redirect()->route('login')
+        //                         ->with('status', 'Tautan reset kata sandi telah dikirim ke emailmu!') 
+        //             : back()->withInput($request->only('email', '_form'))
+        //                     ->withErrors(['email' => 'Email ini tidak terdaftar.']);
     }
 }

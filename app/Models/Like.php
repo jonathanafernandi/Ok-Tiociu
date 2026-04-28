@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Dom\Comment;
+// use Dom\Comment;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Comment;
 
 class Like extends Model
 {

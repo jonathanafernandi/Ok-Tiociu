@@ -160,15 +160,15 @@
                                 type="email" 
                                 name="email" 
                                 id="forgot_email" 
-                                class="form-control @error('email') is-invalid @enderror" 
+                                class="form-control {{ $errors->getBag('forgot-profil')->has('email') ? 'is-invalid' : '' }}" 
                                 placeholder="Masukkan email" 
-                                value="{{ old('email') }}" 
+                                value="{{ old('forgot_profil_email', '') }}" 
                                 required 
                                 autocomplete="username"
                             >
-                            @error('email')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
+                            @if ($errors->getBag('forgot-profil')->has('email'))
+                                <div class="invalid-feedback">{{ $errors->getBag('forgot-profil')->first('email') }}</div>
+                            @endif
                         </div>
 
                         {{-- Tombol Kirim --}}
@@ -189,7 +189,7 @@
 
 @section('scripts')
     {{-- Open modal automatically --}}
-    @if ($errors->has('email') && old('form') === 'forgot-profil' || session('status_error'))
+    @if ($errors->getBag('forgot-profil')->has('email') || session('status_error'))
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 var modal = new bootstrap.Modal(document.getElementById('modalLupaPasswordSaatIni'));
@@ -199,8 +199,24 @@
     @endif
 
     <script>
-        document.getElementById('modalLupaPasswordSaatIni').addEventListener('hidden.bs.modal', function () {
-            document.getElementById('formLupaPasswordSaatIni').reset();
-        });
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('modalLupaPasswordSaatIni').addEventListener('hidden.bs.modal', function () {
+                var form = document.getElementById('formLupaPasswordSaatIni');
+                form.reset();
+                form.querySelectorAll('input[type="email"]').forEach(function (el) {
+                    el.value = '';
+                })
+                form.querySelectorAll('.is-invalid').forEach(function (el) {
+                    el.classList.remove('is-invalid');
+                });
+                form.querySelectorAll('.invalid-feedback').forEach(function (el) {
+                    el.textContent = '';
+                });
+                document.getElementById('modalLupaPasswordSaatIni').querySelectorAll('.alert').forEach(function (el) {
+                    el.remove();
+                });
+            });
+        })
+        
     </script>
 @endsection

@@ -53,8 +53,8 @@ class ProfilController extends Controller
         }
 
         return back()
-            ->withInput()
-            ->withErrors(['email' => 'Email ini tidak terdaftar.']);
+            ->withInput(['forgot_profil_email' => $request->email])
+            ->withErrors(['email' => 'Email ini tidak terdaftar.'], 'forgot-profil');
     }
 
     // Simpan kata sandi baru

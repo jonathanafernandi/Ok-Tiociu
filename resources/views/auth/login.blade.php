@@ -114,11 +114,11 @@
                     </p>
 
                     {{-- Success message after email is sent --}}
-                    @if (session('status'))
+                    {{-- @if (session('status'))
                         <div class="alert alert-success py-2 px-3 mb-3" style="font-size: 0.9rem; border-radius: 8px;">
                             {{ session('status') }}
                         </div>
-                    @endif
+                    @endif --}}
 
                     {{-- Error message: token invalid/expired --}}
                     @if (session('status_error'))
@@ -138,15 +138,15 @@
                                 type="email" 
                                 name="email" 
                                 id="forgot_email" 
-                                class="form-control @error('email') is-invalid @enderror" 
+                                class="form-control {{ $errors->forgot->has('email') ? 'is-invalid' : '' }}" 
                                 placeholder="Masukkan email" 
-                                value="{{ old('email') }}" 
+                                value="{{ old('forgot_email', '') }}" 
                                 required 
                                 autocomplete="username"
                             >
-                            @error('email')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
+                            @if ($errors->forgot->has('email'))
+                                <div class="invalid-feedback">{{ $errors->forgot->first('email') }}</div>
+                            @endif
                         </div>
 
                         {{-- Tombol Kirim --}}
@@ -165,7 +165,7 @@
     </div>
 @endsection
 
-@if (($errors->has('email') && old('_form') === 'forgot') || session('status') || session('status_error'))
+@if ($errors->forgot->has('email') || session('status_error'))
     @section('scripts')
         <script>
             document.addEventListener('DOMContentLoaded', function () {
@@ -175,7 +175,20 @@
 
                 // Reset form saat modal ditutup
                 document.getElementById('modalLupaKataSandi').addEventListener('hidden.bs.modal', function () {
-                    document.getElementById('formLupaKataSandi').reset();
+                    var form = document.getElementById('formLupaKataSandi');
+                    form.reset();
+                    form.querySelectorAll('input[type="email"]').forEach(function (el) {
+                        el.value = '';
+                    });
+                    form.querySelectorAll('.is-invalid').forEach(function (el) {
+                        el.classList.remove('is-invalid');
+                    });
+                    form.querySelectorAll('.invalid-feedback').forEach(function (el) {
+                        el.textContent = '';
+                    });
+                    document.getElementById('modalLupaKataSandi').querySelectorAll('.alert').forEach(function (el) {
+                        el.remove();
+                    });
                 });
             });
         </script>
@@ -186,7 +199,20 @@
             document.addEventListener('DOMContentLoaded', function () {
                 // Reset form after modal is closed
                 document.getElementById('modalLupaKataSandi').addEventListener('hidden.bs.modal', function () {
-                    document.getElementById('formLupaKataSandi').reset();
+                    var form = document.getElementById('formLupaKataSandi');
+                    form.reset();
+                    form.querySelectorAll('input[type="email"]').forEach(function (el) {
+                        el.value = '';
+                    });
+                    form.querySelectorAll('.is-invalid').forEach(function (el) {
+                        el.classList.remove('is-invalid');
+                    });
+                    form.querySelectorAll('.invalid-feedback').forEach(function (el) {
+                        el.textContent = '';
+                    });
+                    document.getElementById('modalLupaKataSandi').querySelectorAll('.alert').forEach(function (el) {
+                        el.remove();
+                    });
                 });
             });
         </script>
