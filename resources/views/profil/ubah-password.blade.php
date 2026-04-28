@@ -17,17 +17,17 @@
                         $initials .= substr(end($words), 0, 1);
                     }
                 @endphp
-                <div class="text-center mb-3">
+                <div class="text-center mb-2">
                     <div class="profil-avatar mx-auto">{{ $initials }}</div>
                 </div>
 
                 {{-- Informasi akun --}}
-                <div class="text-center mb-3">
-                    <div class="fw-bold" style="font-size: 1rem;"> {{ auth()->user()->name }}</div>
-                    <div style="font-size: 0.9rem;">
+                <div class="text-center mb-2">
+                    <div class="fw-bold" style="font-size: 1.125rem;"> {{ auth()->user()->name }}</div>
+                    <div style="font-size: 1rem;">
                         {{ auth()->user()->email }}
                     </div>
-                    <div class="fw-semibold mt-1" style="font-size: 0.9rem;">Buat kata sandi baru</div>
+                    <div class="fw-semibold mt-2" style="font-size: 1rem;">Buat kata sandi baru</div>
                 </div>
 
                 {{-- Status berhasil --}}
