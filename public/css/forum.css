@@ -109,6 +109,13 @@
     color: inherit; 
 }
 
+.forum-card-title,
+.forum-card-desc,
+.forum-comment-text {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
 .forum-card-title {
     font-size: 1rem;
     font-weight: 700;
@@ -258,16 +265,20 @@ a.forum-comment-link:hover {
 /* Comment input bar */
 .forum-comment-input-wrap { 
     margin-bottom: 1rem; 
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
 .forum-comment-form {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     gap: 0.5rem;
 }
 
 .forum-comment-input {
     flex: 1;
+    resize: none;
     border: 1.5px solid #DEE2E6 !important;
     padding: 0.3rem 0.75rem !important;
     font-size: 0.9rem;

@@ -74,7 +74,7 @@
                                     oleh <span class="forum-author">{{ $post->user->name }}</span>
                                     &bull; {{ $post->created_at->format('d M Y H.i') }}
                                 </p> --}}
-                                <p class="forum-card-desc">{{ $post->description }}</p>
+                                <p class="forum-card-desc">{!! nl2br(e($post->description)) !!}</p>
                                 <div class="forum-tags">
                                     @foreach ($post->tags as $tag)
                                         <span class="forum-tag">#{{ \Illuminate\Support\Str::slug($tag->name) }}</span>

@@ -181,7 +181,6 @@ class VocabularySeeder extends Seeder
             ['tiociu_text' => '[cik me] [lak tiam] [si cap ngou hung]', 'indonesian_text' => 'jam 6.45 malam', 'audio_path' => 'audio/vocabularies/E.50.m4a'],
             ['tiociu_text' => 'chek tiam ceng', 'indonesian_text' => 'tujuh jam', 'audio_path' => 'audio/vocabularies/E.51.m4a'],
             ['tiociu_text' => 'ngou cap lak hung ceng', 'indonesian_text' => 'lima puluh enam menit', 'audio_path' => 'audio/vocabularies/E.52.m4a'],
-            ['tiociu_text' => '[ek kao chek cap lak ni] [sa guek] [ji cap ek ho] [lui pai] [e kua] [ek tiam] [sa cap puek hung]', 'indonesian_text' => 'Minggu, 21 maret 1976 jam 1.38 siang', 'audio_path' => 'audio/vocabularies/E.53.m4a'],
         ];
         foreach ($vocabE as $vocab) {
             Vocabulary::create(['topic_id' => $topicE->id] + $vocab);

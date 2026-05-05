@@ -18,10 +18,12 @@ class CommentController extends Controller
             'comment_text.max' => 'Komentar maksimal 2.000 karakter.',
         ]);
 
+        $commentText = trim($request->comment_text);
+
         Comment::create([
             'user_id' => Auth::id(),
             'post_id' => $post->id,
-            'comment_text' => $request->comment_text,
+            'comment_text' => $commentText,
         ]);
 
         return redirect()->route('forum.show', $post)

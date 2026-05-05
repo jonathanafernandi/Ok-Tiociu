@@ -29,7 +29,7 @@
                 {{-- <p class="forum-card-meta">
                     oleh <span class="forum-author">{{ $post->user->name }}</span> &bull; {{ $post->created_at->format('d M Y H.i') }}
                 </p> --}}
-                <p class="forum-card-desc mb-3">{{ $post->description }}</p>
+                <p class="forum-card-desc mb-3">{!! nl2br(e($post->description)) !!}</p>
 
                 <div class="forum-tags mb-3">
                     @foreach ($post->tags as $tag)
@@ -63,14 +63,15 @@
             <div class="forum-comment-input-wrap">
                 <form action="{{ route('forum.komentar.store', $post) }}" method="post" class="forum-comment-form" id="formKomentar">
                     @csrf
-                    <input type="text" name="comment_text" id="commentInput" class="form-control forum-comment-input @error('comment_text') is-invalid @enderror" placeholder="Masukkan komentar" value="{{ old('comment_text') }}" autocomplete="off">
-                    @error('comment_text')
-                        <div class="invalid-feedback d-block" style="font-size: 0.8rem;">{{ $message }}</div>
-                    @enderror
+                    <textarea name="comment_text" id="commentInput" rows="1" class="form-control forum-comment-input {{ $errors->has('comment_text') ? 'is-invalid' : '' }}" placeholder="Masukkan komentar" autocomplete="off">{{ old('comment_text') }}</textarea>
+                    {{-- <input type="text" name="comment_text" id="commentInput" class="form-control forum-comment-input @error('comment_text') is-invalid @enderror" placeholder="Masukkan komentar" value="{{ old('comment_text') }}" autocomplete="off"> --}}
                     <button type="submit" class="forum-comment-send" title="Kirim komentar">
                         <i class="bi bi-send-fill"></i>
                     </button>
                 </form>
+                @error('comment_text')
+                    <div class="invalid-feedback d-block" style="font-size: 0.8rem;">{{ $message }}</div>
+                @enderror
             </div>
 
             {{-- Daftar komentar --}}
@@ -85,7 +86,7 @@
                         {{-- <p class="forum-card-meta mb-2">
                             <span class="forum-author">{{ $comment->user->name }}</span> &bull; {{ $comment->created_at->format('d M Y H.i') }}
                         </p> --}}
-                        <p class="forum-comment-text mb-2">{{ $comment->comment_text }}</p>
+                        <p class="forum-comment-text mb-2">{!! nl2br(e($comment->comment_text)) !!}</p>
                         <div class="forum-card-actions">
                             {{-- Suka komentar --}}
                             @php
@@ -223,12 +224,35 @@
         }
 
         // Prevent empty comment submit
-        document.getElementById('formKomentar').addEventListener('submit', function (e) {
-            const input = document.getElementById('commentInput');
-            if (!input.value.trim()) {
+        const commentInput = document.getElementById('commentInput');
+
+        function autoResize(el) {
+            el.style.height = 'auto';
+            el.style.height = el.scrollHeight + 'px';
+        }
+
+        commentInput.addEventListener('input', function () {
+            autoResize(this);
+        });
+
+        commentInput.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
                 e.preventDefault();
-                input.focus();
+                document.getElementById('formKomentar').dispatchEvent(
+                    new Event('submit', { cancelable: true, bubbles: true })
+                );
             }
         });
+
+        document.getElementById('formKomentar').addEventListener('submit', function (e) {
+            if (!commentInput.value.trim()) {
+                e.preventDefault();
+                commentInput.focus();
+            }
+        });
+
+        window.addEventListener('load', function () {
+            autoResize(commentInput);
+        });        
     </script>
 @endsection
