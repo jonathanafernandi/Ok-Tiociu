@@ -19,13 +19,19 @@ class TopicSeeder extends Seeder
             ['title' => 'Kata Tanya'],
             ['title' => 'Angka & Bilangan'],
             ['title' => 'Waktu'],
-            ['title' => 'Keluarga'],
-            ['title' => 'Warna'],
-            ['title' => 'Makanan & Minuman'],
             ['title' => 'Anggota Tubuh'],
-            ['title' => 'Kata Kerja Dasar'],
+            ['title' => 'Keluarga'],
+            ['title' => 'Rumah'],
+            ['title' => 'Pekerjaan'],
             ['title' => 'Kata Sifat Umum'],
+            ['title' => 'Warna'],
+            ['title' => 'Hewan'],
+            ['title' => 'Makanan & Minuman'],
+            ['title' => 'Sayuran'],
+            ['title' => 'Buah-Buahan'],
+            ['title' => 'Kata Kerja Dasar'],
             ['title' => 'Tempat & Arah'],
+            ['title' => 'Transportasi'],
         ];
 
         foreach ($topics as $topic) {

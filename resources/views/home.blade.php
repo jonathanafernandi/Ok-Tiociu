@@ -82,7 +82,7 @@
                             <i class="bi bi-collection-play-fill"></i>
                         </div>
                         <h3 class="fitur-name">Materi Terstruktur</h3>
-                        <p class="fitur-desc">300+ kosakata & frasa sehari-hari, disusun dalam 12 topik</p>
+                        <p class="fitur-desc">400+ kosakata & frasa sehari-hari, disusun dalam 18 topik</p>
                     </div>
                 </div>
 

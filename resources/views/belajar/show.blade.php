@@ -20,7 +20,34 @@
             {{-- Kosakata cards --}}
             <div class="materi-list">
                 @foreach ($vocabularies as $vocabulary)
-                    <div class="materi-row">
+                    <div class="materi-card">
+                        @if ($vocabulary->image_path)
+                            <div class="materi-card-img-wrap">
+                                <img 
+                                    src="{{ asset('storage/' . $vocabulary->image_path) }}" 
+                                    alt="{{ $vocabulary->tiociu_text }}" 
+                                    class="materi-card-img" 
+                                    width="365.333" 
+                                    height="205.5"
+                                >
+                            </div>
+                        @endif
+                        
+                        <div class="materi-card-body {{ $vocabulary->image_path ? '' : 'no-img' }}">
+                            <div class="materi-tiociu">{{ $vocabulary->tiociu_text }}</div>
+
+                            <div class="materi-indonesia">{{ $vocabulary->indonesian_text }}</div>
+
+                            <button 
+                                class="materi-play" 
+                                onclick="playAudio(this, '{{ asset('storage/' . $vocabulary->audio_path) }}')" 
+                                aria-label="Putar audio {{ $vocabulary->tiociu_text }}"
+                            >
+                                <i class="bi bi-play-fill"></i>
+                            </button>
+                        </div>
+                    </div>
+                    {{-- <div class="materi-row">
                         <div class="materi-no">{{ $loop->iteration }}</div>
 
                         <button 
@@ -34,7 +61,7 @@
                         <div class="materi-tiociu">{{ $vocabulary->tiociu_text }}</div>
 
                         <div class="materi-indonesia">{{ $vocabulary->indonesian_text }}</div>
-                    </div>
+                    </div> --}}
                 @endforeach
             </div>
         </div>

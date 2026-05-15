@@ -11,6 +11,7 @@ class Vocabulary extends Model
         'tiociu_text',
         'indonesian_text',
         'audio_path',
+        'image_path'
     ];
 
     public function topic()

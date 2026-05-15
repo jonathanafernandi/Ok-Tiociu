@@ -26,6 +26,10 @@ class ProfilController extends Controller
             'name.max' => 'Nama maksimal 255 karakter.',
         ]);
 
+        if ($request->name === $request->user()->name) {
+            return back()->withErrors(['name' => 'Nama baru tidak boleh sama dengan nama saat ini.']);
+        }
+
         $request->user()->update(['name' => $request->name]);
 
         return redirect()->route('profil.index')->with('status', 'Profil berhasil diperbarui!');
@@ -67,6 +71,7 @@ class ProfilController extends Controller
             'current_password.required' => 'Kata sandi saat ini wajib diisi.',
             'password.required' => 'Kata sandi baru wajib diisi.',
             'password.confirmed' => 'Konfirmasi kata sandi tidak cocok.',
+            'password.min' => 'Kata sandi minimal 8 karakter.',
         ]);
 
         // Check if current password is true

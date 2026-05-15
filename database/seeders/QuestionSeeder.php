@@ -75,7 +75,7 @@ class QuestionSeeder extends Seeder
         $quizB = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Salam & Ungkapan Dasar'))->first();
         $questionsB = [
             [
-                'question_text' => 'Apa arti kata "kam sia" dalam bahasa Indonesia?',
+                'question_text' => 'Apa arti "kam sia" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
@@ -95,12 +95,12 @@ class QuestionSeeder extends Seeder
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Apa arti "oi tek" dalam bahasa Indonesia?',
+                'question_text' => 'Apa arti "oi têk" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Apa arti "boe tong" dalam bahasa Indonesia?',
+                'question_text' => 'Apa arti "boê tong" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
@@ -115,7 +115,7 @@ class QuestionSeeder extends Seeder
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"êm ..." artinya "tidak" dalam bahasa Tiociu.',
+                'question_text' => '"em ..." artinya "tidak" dalam bahasa Tiociu.',
                 'question_type' => 'IS',
                 'audio_path' => null,
             ],
@@ -206,7 +206,7 @@ class QuestionSeeder extends Seeder
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Apa arti "cik pek khang sa" dalam bahasa Indonesia?',
+                'question_text' => 'Apa arti "cik pêk khang sa" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
@@ -216,22 +216,22 @@ class QuestionSeeder extends Seeder
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Apa arti "cik pek" dalam bahasa Indonesia?',
+                'question_text' => 'Apa arti "cik pêk" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"cheng khang puek cap" dalam bahasa Tiociu artinya ....',
+                'question_text' => '"chêng khang puêk cap" dalam bahasa Tiociu artinya ....',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Apa arti "cik cheng" dalam bahasa Indonesia?',
+                'question_text' => 'Apa arti "cik chêng" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Apa arti "cêk ban" dalam bahasa Indonesia?',
+                'question_text' => 'Apa arti "cek ban" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
@@ -246,7 +246,7 @@ class QuestionSeeder extends Seeder
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"cheng ..." artinya "1.900" dalam bahasa Tiociu.',
+                'question_text' => '"chêng ..." artinya "1.900" dalam bahasa Tiociu.',
                 'question_type' => 'IS',
                 'audio_path' => null,
             ],
@@ -299,12 +299,12 @@ class QuestionSeeder extends Seeder
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Apa arti "teng kai guek" dalam bahasa Indonesia?',
+                'question_text' => 'Apa arti "têng kai guêk" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"cik me" dalam bahasa Tiociu artinya ....',
+                'question_text' => '"cik mê" dalam bahasa Tiociu artinya ....',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
@@ -324,7 +324,7 @@ class QuestionSeeder extends Seeder
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"cêk ..." artinya "satu tahun" dalam bahasa Tiociu.',
+                'question_text' => '"cek ..." artinya "satu tahun" dalam bahasa Tiociu.',
                 'question_type' => 'IS',
                 'audio_path' => null,
             ],
@@ -334,7 +334,7 @@ class QuestionSeeder extends Seeder
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Bulan Mei dalam bahasa Tiociu adalah "... guek".',
+                'question_text' => 'Bulan Mei dalam bahasa Tiociu adalah "... guêk".',
                 'question_type' => 'IS',
                 'audio_path' => null,
             ],
@@ -363,9 +363,77 @@ class QuestionSeeder extends Seeder
             Question::create(['quiz_id' => $quizE->id] + $question);
         }
 
-        // Topik F: Keluarga
-        $quizF = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Keluarga'))->first();
+        // Topik F: Anggota Tubuh
+        $quizF = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Anggota Tubuh'))->first();
         $questionsF = [
+            [
+                'question_text' => 'Apa arti "thao" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Bagaimana cara mengucapkan "tangan" dalam bahasa Tiociu?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"mak" dalam bahasa Tiociu artinya ....',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Apa arti "phi" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"mo" dalam bahasa Tiociu artinya ....',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Apa arti "huêk" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"... thao wu" artinya "lutut" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"... cang" artinya "jantung" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"... thao" artinya "bahu" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Anggota tubuh apa yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/F.6.m4a',
+            ],
+            [
+                'question_text' => 'Anggota tubuh apa yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/F.17.m4a',
+            ],
+            [
+                'question_text' => 'Anggota tubuh apa yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/F.3.m4a',
+            ],
+        ];
+        foreach ($questionsF as $question) {
+            Question::create(['quiz_id' => $quizF->id] + $question);
+        }
+
+        // Topik G: Keluarga
+        $quizG = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Keluarga'))->first();
+        $questionsG = [
             [
                 'question_text' => 'Apa arti "a pak" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
@@ -424,33 +492,252 @@ class QuestionSeeder extends Seeder
             [
                 'question_text' => 'Apa arti kata yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/F.21.m4a',
+                'audio_path' => 'audio/vocabularies/G.21.m4a',
             ],
             [
                 'question_text' => 'Apa arti kata yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/F.9.m4a',
+                'audio_path' => 'audio/vocabularies/G.9.m4a',
             ],
             [
                 'question_text' => 'Apa arti kata yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/F.18.m4a',
+                'audio_path' => 'audio/vocabularies/G.18.m4a',
             ],
             [
                 'question_text' => 'Apa arti kata yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/F.14.m4a',
+                'audio_path' => 'audio/vocabularies/G.14.m4a',
             ],
         ];
-        foreach ($questionsF as $question) {
-            Question::create(['quiz_id' => $quizF->id] + $question);
+        foreach ($questionsG as $question) {
+            Question::create(['quiz_id' => $quizG->id] + $question);
         }
 
-        // Topik G: Warna
-        $quizG = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Warna'))->first();
-        $questionsG = [
+        // Topik H: Rumah
+        $quizH = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Rumah'))->first();
+        $questionsH = [
             [
-                'question_text' => 'Apa arti "ang sek" dalam bahasa Indonesia?',
+                'question_text' => 'Apa arti "chu" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Bagaimana cara mengucapkan "kamar" dalam bahasa Tiociu?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"uêi" dalam bahasa Tiociu artinya ....',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Apa arti "thêng mung" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"phou" dalam bahasa Tiociu artinya ....',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Apa arti "cheng" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"chê si" dalam bahasa Tiociu artinya ....',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"lao ..." artinya "tangga" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"cing ..." artinya "bantal" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"... si" artinya "televisi" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"so ..." artinya "gembok" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Apa arti kata yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/H.4.m4a',
+            ],
+            [
+                'question_text' => 'Apa arti kata yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/H.8.m4a',
+            ],
+            [
+                'question_text' => 'Apa arti kata yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/H.28.m4a',
+            ],
+            [
+                'question_text' => 'Apa arti kata yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/H.33.m4a',
+            ],
+        ];
+        foreach ($questionsH as $question) {
+            Question::create(['quiz_id' => $quizH->id] + $question);
+        }
+
+        // Topik I: Pekerjaan
+        $quizI = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Pekerjaan'))->first();
+        $questionsI = [
+            [
+                'question_text' => 'Apa arti "lao kung" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Bagaimana cara mengucapkan "polisi" dalam bahasa Tiociu?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"seng li nang" dalam bahasa Tiociu artinya ....',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Apa arti "huêi thao" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"sing sê" dalam bahasa Tiociu artinya ....',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"... se" artinya "perawat" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"... cia" artinya "jurnalis" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"puêi ki ..." artinya "pilot" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"... nang" artinya "karyawan" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Apa arti kata yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/I.4.m4a',
+            ],
+            [
+                'question_text' => 'Apa arti kata yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/I.13.m4a',
+            ],
+            [
+                'question_text' => 'Apa arti kata yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/I.6.m4a',
+            ],
+        ];
+        foreach ($questionsI as $question) {
+            Question::create(['quiz_id' => $quizI->id] + $question);
+        }
+
+        // Topik J: Kata Sifat Umum
+        $quizJ = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Kata Sifat Umum'))->first();
+        $questionsJ = [
+            [
+                'question_text' => 'Apa arti "tua" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Bagaimana cara mengucapkan "mahal" dalam bahasa Tiociu?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"mê" dalam bahasa Tiociu artinya ....',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Apa arti "lak tak" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"hêk" dalam bahasa Tiociu artinya ....',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Apa arti "keng" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"... khik" artinya "bersih" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"hua ..." artinya "senang" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Kata Tiociu untuk "dingin" adalah "...".',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Apa arti kata yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/J.7.m4a',
+            ],
+            [
+                'question_text' => 'Apa arti kata yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/J.11.m4a',
+            ],
+            [
+                'question_text' => 'Apa arti kata yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/J.17.m4a',
+            ],
+        ];
+        foreach ($questionsJ as $question) {
+            Question::create(['quiz_id' => $quizJ->id] + $question);
+        }
+
+        // Topik K: Warna
+        $quizK = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Warna'))->first();
+        $questionsK = [
+            [
+                'question_text' => 'Apa arti "ang sêk" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
@@ -460,60 +747,143 @@ class QuestionSeeder extends Seeder
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"che sek" dalam bahasa Tiociu artinya ....',
+                'question_text' => '"chê sêk" dalam bahasa Tiociu artinya ....',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Apa arti "kim sek" dalam bahasa Indonesia?',
+                'question_text' => 'Apa arti "kim sêk" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"chiang ang sek" dalam bahasa Tiociu artinya ....',
+                'question_text' => '"chiang ang sêk" dalam bahasa Tiociu artinya ....',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"... sek" artinya "warna biru" dalam bahasa Tiociu.',
+                'question_text' => '"... sêk" artinya "warna biru" dalam bahasa Tiociu.',
                 'question_type' => 'IS',
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"... sek" artinya "warna kuning" dalam bahasa Tiociu.',
+                'question_text' => '"... sêk" artinya "warna kuning" dalam bahasa Tiociu.',
                 'question_type' => 'IS',
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Kata Tiociu untuk "warna putih" adalah "... sek".',
+                'question_text' => 'Kata Tiociu untuk "warna putih" adalah "... sêk".',
                 'question_type' => 'IS',
                 'audio_path' => null,
             ],
             [
                 'question_text' => 'Warna apa yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/G.8.m4a',
+                'audio_path' => 'audio/vocabularies/K.8.m4a',
             ],
             [
                 'question_text' => 'Apa arti kata yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/G.9.m4a',
+                'audio_path' => 'audio/vocabularies/K.9.m4a',
             ],
         ];
-        foreach ($questionsG as $question) {
-            Question::create(['quiz_id' => $quizG->id] + $question);
+        foreach ($questionsK as $question) {
+            Question::create(['quiz_id' => $quizK->id] + $question);
         }
 
-        // Topik H: Makanan & Minuman
-        $quizH = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Makanan & Minuman'))->first();
-        $questionsH = [
+        // Topik L: Hewan
+        $quizL = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Hewan'))->first();
+        $questionsL = [
             [
-                'question_text' => 'Apa arti "pêng" dalam bahasa Indonesia?',
+                'question_text' => 'Apa arti "ngiao" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Bagaimana cara mengucapkan "ikan" dalam bahasa Tiociu?',
+                'question_text' => 'Bagaimana cara mengucapkan "harimau" dalam bahasa Tiociu?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"ciao" dalam bahasa Tiociu artinya ....',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Apa arti "buê yak" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"ba kia" dalam bahasa Tiociu artinya ....',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Apa arti "hoi" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"him" dalam bahasa Tiociu artinya ....',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"lao ..." artinya "monyet" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"teng am ..." artinya "jerapah" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"... lêng" artinya "cicak" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"... he" artinya "cumi-cumi" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Hewan apa yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/L.3.m4a',
+            ],
+            [
+                'question_text' => 'Hewan apa yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/L.25.m4a',
+            ],
+            [
+                'question_text' => 'Hewan apa yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/L.31.m4a',
+            ],
+            [
+                'question_text' => 'Hewan apa yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/L.30.m4a',
+            ],
+        ];
+        foreach ($questionsL as $question) {
+            Question::create(['quiz_id' => $quizL->id] + $question);
+        }
+
+        // Topik M: Makanan & Minuman
+        $quizM = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Makanan & Minuman'))->first();
+        $questionsM = [
+            [
+                'question_text' => 'Apa arti "peng" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Bagaimana cara mengucapkan "gula" dalam bahasa Tiociu?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
@@ -528,17 +898,17 @@ class QuestionSeeder extends Seeder
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"te" dalam bahasa Tiociu artinya ....',
+                'question_text' => '"tê" dalam bahasa Tiociu artinya ....',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Apa arti "muei" dalam bahasa Indonesia?',
+                'question_text' => 'Apa arti "muêi" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"sem" dalam bahasa Tiociu artinya rasa ....',
+                'question_text' => '"sêm" dalam bahasa Tiociu artinya rasa ....',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
@@ -565,99 +935,167 @@ class QuestionSeeder extends Seeder
             [
                 'question_text' => 'Apa arti kata yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/H.14.m4a',
+                'audio_path' => 'audio/vocabularies/M.12.m4a',
             ],
             [
                 'question_text' => 'Rasa apa yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/H.32.m4a',
+                'audio_path' => 'audio/vocabularies/M.28.m4a',
             ],
             [
                 'question_text' => 'Apa arti kata yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/H.21.m4a',
+                'audio_path' => 'audio/vocabularies/M.17.m4a',
             ],
             [
-                'question_text' => 'Rasa apa yang diucapkan?',
+                'question_text' => 'Apa arti kata yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/H.18.m4a',
+                'audio_path' => 'audio/vocabularies/M.14.m4a',
             ],
         ];
-        foreach ($questionsH as $question) {
-            Question::create(['quiz_id' => $quizH->id] + $question);
+        foreach ($questionsM as $question) {
+            Question::create(['quiz_id' => $quizM->id] + $question);
         }
 
-        // Topik I: Anggota Tubuh
-        $quizI = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Anggota Tubuh'))->first();
-        $questionsI = [
+        // Topik N: Sayuran
+        $quizN = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Sayuran'))->first();
+        $questionsN = [
             [
-                'question_text' => 'Apa arti "thau" dalam bahasa Indonesia?',
+                'question_text' => 'Apa arti "êng chai" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Bagaimana cara mengucapkan "tangan" dalam bahasa Tiociu?',
+                'question_text' => 'Bagaimana cara mengucapkan "sawi putih" dalam bahasa Tiociu?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"mak" dalam bahasa Tiociu artinya ....',
+                'question_text' => '"ang mo kio" dalam bahasa Tiociu artinya ....',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Apa arti "phi" dalam bahasa Indonesia?',
+                'question_text' => 'Apa arti "ko lê chai" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"mo" dalam bahasa Tiociu artinya ....',
+                'question_text' => '"chai tao" dalam bahasa Tiociu artinya ....',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Apa arti "huek" dalam bahasa Indonesia?',
-                'question_type' => 'PG',
-                'audio_path' => null,
-            ],
-            [
-                'question_text' => '"... thao wu" artinya "lutut" dalam bahasa Tiociu.',
+                'question_text' => '"chai ..." artinya "kembang kol" dalam bahasa Tiociu.',
                 'question_type' => 'IS',
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"... cang" artinya "jantung" dalam bahasa Tiociu.',
+                'question_text' => '"... chai thao" artinya "wortel" dalam bahasa Tiociu.',
                 'question_type' => 'IS',
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"... thau" artinya "bahu" dalam bahasa Tiociu.',
+                'question_text' => '"... kia" artinya "bawang merah" dalam bahasa Tiociu.',
                 'question_type' => 'IS',
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Anggota tubuh apa yang diucapkan?',
-                'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/I.6.m4a',
+                'question_text' => '"tao ..." artinya "tauge" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
             ],
             [
-                'question_text' => 'Anggota tubuh apa yang diucapkan?',
+                'question_text' => 'Sayur apa yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/I.17.m4a',
+                'audio_path' => 'audio/vocabularies/N.8.m4a',
             ],
             [
-                'question_text' => 'Anggota tubuh apa yang diucapkan?',
+                'question_text' => 'Sayur apa yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/I.3.m4a',
+                'audio_path' => 'audio/vocabularies/N.16.m4a',
+            ],
+            [
+                'question_text' => 'Sayur apa yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/N.17.m4a',
             ],
         ];
-        foreach ($questionsI as $question) {
-            Question::create(['quiz_id' => $quizI->id] + $question);
+        foreach ($questionsN as $question) {
+            Question::create(['quiz_id' => $quizN->id] + $question);
         }
 
-        // Topik J: Kata Kerja Dasar
-        $quizJ = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Kata Kerja Dasar'))->first();
-        $questionsJ = [
+        // Topik O: Buah-Buahan
+        $quizO = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Buah-Buahan'))->first();
+        $questionsO = [
+            [
+                'question_text' => 'Apa arti "ni kuêi" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Bagaimana cara mengucapkan "jeruk" dalam bahasa Tiociu?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"lêng mong" dalam bahasa Tiociu artinya ....',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Apa arti "phu tho" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"suai" dalam bahasa Tiociu artinya ....',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"... ka" artinya "jeruk nipis" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"ang ..." artinya "nanas" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"chao ..." artinya "stroberi" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"... kuêi" artinya "semangka" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Sayur apa yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/O.1.m4a',
+            ],
+            [
+                'question_text' => 'Sayur apa yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/O.7.m4a',
+            ],
+            [
+                'question_text' => 'Sayur apa yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/O.14.m4a',
+            ],
+        ];
+        foreach ($questionsO as $question) {
+            Question::create(['quiz_id' => $quizO->id] + $question);
+        }
+
+        // Topik P: Kata Kerja Dasar
+        $quizP = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Kata Kerja Dasar'))->first();
+        $questionsP = [
             [
                 'question_text' => 'Apa arti "lai" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
@@ -679,12 +1117,12 @@ class QuestionSeeder extends Seeder
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"chuei" dalam bahasa Tiociu artinya ....',
+                'question_text' => '"chuêi" dalam bahasa Tiociu artinya ....',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Apa arti "khê" dalam bahasa Indonesia?',
+                'question_text' => 'Apa arti "khe" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
@@ -699,118 +1137,50 @@ class QuestionSeeder extends Seeder
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"co ..." artinya "bekerja" dalam bahasa Tiociu.',
+                'question_text' => '"... sa" artinya "berpakaian" dalam bahasa Tiociu.',
                 'question_type' => 'IS',
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"... cê" artinya "belajar" dalam bahasa Tiociu.',
+                'question_text' => '"... ce" artinya "belajar" dalam bahasa Tiociu.',
                 'question_type' => 'IS',
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"... ek" artinya "mandi" dalam bahasa Tiociu.',
+                'question_text' => '"... êk" artinya "mandi" dalam bahasa Tiociu.',
                 'question_type' => 'IS',
                 'audio_path' => null,
             ],
             [
                 'question_text' => 'Apa arti kata yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/J.3.m4a',
+                'audio_path' => 'audio/vocabularies/P.3.m4a',
             ],
             [
                 'question_text' => 'Apa arti kata yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/J.4.m4a',
+                'audio_path' => 'audio/vocabularies/P.4.m4a',
             ],
             [
                 'question_text' => 'Apa arti kata yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/J.8.m4a',
+                'audio_path' => 'audio/vocabularies/P.8.m4a',
             ],
             [
                 'question_text' => 'Apa arti kata yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/J.10.m4a',
+                'audio_path' => 'audio/vocabularies/P.10.m4a',
             ],
         ];
-        foreach ($questionsJ as $question) {
-            Question::create(['quiz_id' => $quizJ->id] + $question);
+        foreach ($questionsP as $question) {
+            Question::create(['quiz_id' => $quizP->id] + $question);
         }
 
-        // Topik K: Kata Sifat Umum
-        $quizK = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Kata Sifat Umum'))->first();
-        $questionsK = [
+        // Topik Q: Tempat & Arah
+        $quizQ = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Tempat & Arah'))->first();
+        $questionsQ = [
             [
-                'question_text' => 'Apa arti "tua" dalam bahasa Indonesia?',
-                'question_type' => 'PG',
-                'audio_path' => null,
-            ],
-            [
-                'question_text' => 'Bagaimana cara mengucapkan "mahal" dalam bahasa Tiociu?',
-                'question_type' => 'PG',
-                'audio_path' => null,
-            ],
-            [
-                'question_text' => '"me" dalam bahasa Tiociu artinya ....',
-                'question_type' => 'PG',
-                'audio_path' => null,
-            ],
-            [
-                'question_text' => 'Apa arti "lak tak" dalam bahasa Indonesia?',
-                'question_type' => 'PG',
-                'audio_path' => null,
-            ],
-            [
-                'question_text' => '"hek" dalam bahasa Tiociu artinya ....',
-                'question_type' => 'PG',
-                'audio_path' => null,
-            ],
-            [
-                'question_text' => 'Apa arti "kêng" dalam bahasa Indonesia?',
-                'question_type' => 'PG',
-                'audio_path' => null,
-            ],
-            [
-                'question_text' => '"... khik" artinya "bersih" dalam bahasa Tiociu.',
-                'question_type' => 'IS',
-                'audio_path' => null,
-            ],
-            [
-                'question_text' => '"hua ..." artinya "senang" dalam bahasa Tiociu.',
-                'question_type' => 'IS',
-                'audio_path' => null,
-            ],
-            [
-                'question_text' => 'Kata Tiociu untuk "dingin" adalah "...".',
-                'question_type' => 'IS',
-                'audio_path' => null,
-            ],
-            [
-                'question_text' => 'Apa arti kata yang diucapkan?',
-                'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/K.7.m4a',
-            ],
-            [
-                'question_text' => 'Apa arti kata yang diucapkan?',
-                'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/K.11.m4a',
-            ],
-            [
-                'question_text' => 'Apa arti kata yang diucapkan?',
-                'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/K.17.m4a',
-            ],
-        ];
-        foreach ($questionsK as $question) {
-            Question::create(['quiz_id' => $quizK->id] + $question);
-        }
-
-        // Topik L: Tempat & Arah
-        $quizL = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Tempat & Arah'))->first();
-        $questionsL = [
-            [
-                'question_text' => 'Apa arti "ok têng" dalam bahasa Indonesia?',
+                'question_text' => 'Apa arti "ok teng" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
@@ -825,12 +1195,12 @@ class QuestionSeeder extends Seeder
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Apa arti "thao ceng" dalam bahasa Indonesia?',
+                'question_text' => 'Apa arti "thao cêng" dalam bahasa Indonesia?',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"teng kuang" dalam bahasa Tiociu artinya ....',
+                'question_text' => '"têng kuang" dalam bahasa Tiociu artinya ....',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
@@ -857,21 +1227,79 @@ class QuestionSeeder extends Seeder
             [
                 'question_text' => 'Apa arti kata yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/L.8.m4a',
+                'audio_path' => 'audio/vocabularies/Q.7.m4a',
             ],
             [
                 'question_text' => 'Arah apa yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/L.21.m4a',
+                'audio_path' => 'audio/vocabularies/Q.20.m4a',
             ],
             [
                 'question_text' => 'Posisi apa yang diucapkan?',
                 'question_type' => 'AU',
-                'audio_path' => 'audio/vocabularies/L.15.m4a',
+                'audio_path' => 'audio/vocabularies/Q.14.m4a',
             ],
         ];
-        foreach ($questionsL as $question) {
-            Question::create(['quiz_id' => $quizL->id] + $question);
+        foreach ($questionsQ as $question) {
+            Question::create(['quiz_id' => $quizQ->id] + $question);
+        }
+
+        // Topik R: Transportasi
+        $quizR = Quiz::whereHas('topic', fn($query) => $query->where('title', 'Transportasi'))->first();
+        $questionsR = [
+            [
+                'question_text' => 'Apa arti "cung" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Bagaimana cara mengucapkan "taksi" dalam bahasa Tiociu?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"ba" dalam bahasa Tiociu artinya ....',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Apa arti "mo to" dalam bahasa Indonesia?',
+                'question_type' => 'PG',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"... chia" artinya "sepeda" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"... ki" artinya "pesawat" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => '"... chia" artinya "kereta" dalam bahasa Tiociu.',
+                'question_type' => 'IS',
+                'audio_path' => null,
+            ],
+            [
+                'question_text' => 'Apa arti kata yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/R.1.m4a',
+            ],
+            [
+                'question_text' => 'Rasa apa yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/R.10.m4a',
+            ],
+            [
+                'question_text' => 'Apa arti kata yang diucapkan?',
+                'question_type' => 'AU',
+                'audio_path' => 'audio/vocabularies/R.9.m4a',
+            ],
+        ];
+        foreach ($questionsR as $question) {
+            Question::create(['quiz_id' => $quizR->id] + $question);
         }
     }
 }

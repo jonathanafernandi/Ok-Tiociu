@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('tiociu_text');
             $table->string('indonesian_text');
             $table->string('audio_path');
+            $table->string('image_path')->nullable();
             $table->timestamps();
         });
     }
