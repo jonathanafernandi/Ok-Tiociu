@@ -305,7 +305,7 @@ class VocabularySeeder extends Seeder
             ['tiociu_text' => 'ki cia', 'indonesian_text' => 'jurnalis', 'audio_path' => 'audio/vocabularies/I.8.m4a', 'image_path' => 'images/vocabularies/I.8.jpg'],
             ['tiociu_text' => 'sing sê', 'indonesian_text' => 'guru', 'audio_path' => 'audio/vocabularies/I.9.m4a', 'image_path' => 'images/vocabularies/I.9.jpg'],
             ['tiociu_text' => 'co chang nang', 'indonesian_text' => 'petani', 'audio_path' => 'audio/vocabularies/I.10.m4a', 'image_path' => 'images/vocabularies/I.10.jpg'],
-            ['tiociu_text' => 'he ming', 'indonesian_text' => 'melayan', 'audio_path' => 'audio/vocabularies/I.11.m4a', 'image_path' => 'images/vocabularies/I.11.jpg'],
+            ['tiociu_text' => 'he ming', 'indonesian_text' => 'nelayan', 'audio_path' => 'audio/vocabularies/I.11.m4a', 'image_path' => 'images/vocabularies/I.11.jpg'],
             ['tiociu_text' => 'huêi thao', 'indonesian_text' => 'juru masak', 'audio_path' => 'audio/vocabularies/I.12.m4a', 'image_path' => 'images/vocabularies/I.12.jpg'],
             ['tiociu_text' => 'chia hu', 'indonesian_text' => 'sopir', 'audio_path' => 'audio/vocabularies/I.13.m4a', 'image_path' => 'images/vocabularies/I.13.jpg'],
             ['tiociu_text' => 'puêi ki se', 'indonesian_text' => 'pilot', 'audio_path' => 'audio/vocabularies/I.14.m4a', 'image_path' => 'images/vocabularies/I.14.jpg'],

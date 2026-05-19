@@ -579,7 +579,7 @@ class AnswerSeeder extends Seeder
             ['question_id' => $questionG[9]->id, 'answer_text' => 'yi', 'is_correct' => false],
 
             // Question 11
-            ['question_id' => $questionG[10]->id, 'answer_text' => 'êm', 'is_correct' => false],
+            ['question_id' => $questionG[10]->id, 'answer_text' => 'em', 'is_correct' => false],
             ['question_id' => $questionG[10]->id, 'answer_text' => 'kou', 'is_correct' => false],
             ['question_id' => $questionG[10]->id, 'answer_text' => 'moi', 'is_correct' => false],
             ['question_id' => $questionG[10]->id, 'answer_text' => 'ma', 'is_correct' => true],

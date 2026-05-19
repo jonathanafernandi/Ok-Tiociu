@@ -611,7 +611,7 @@ class QuestionSeeder extends Seeder
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"seng li nang" dalam bahasa Tiociu artinya ....',
+                'question_text' => '"sêng li nang" dalam bahasa Tiociu artinya ....',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],
@@ -1074,17 +1074,17 @@ class QuestionSeeder extends Seeder
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Sayur apa yang diucapkan?',
+                'question_text' => 'Buah apa yang diucapkan?',
                 'question_type' => 'AU',
                 'audio_path' => 'audio/vocabularies/O.1.m4a',
             ],
             [
-                'question_text' => 'Sayur apa yang diucapkan?',
+                'question_text' => 'Buah apa yang diucapkan?',
                 'question_type' => 'AU',
                 'audio_path' => 'audio/vocabularies/O.7.m4a',
             ],
             [
-                'question_text' => 'Sayur apa yang diucapkan?',
+                'question_text' => 'Buah apa yang diucapkan?',
                 'question_type' => 'AU',
                 'audio_path' => 'audio/vocabularies/O.14.m4a',
             ],
@@ -1283,12 +1283,12 @@ class QuestionSeeder extends Seeder
                 'audio_path' => null,
             ],
             [
-                'question_text' => 'Apa arti kata yang diucapkan?',
+                'question_text' => 'Kendaraan apa yang diucapkan',
                 'question_type' => 'AU',
                 'audio_path' => 'audio/vocabularies/R.1.m4a',
             ],
             [
-                'question_text' => 'Rasa apa yang diucapkan?',
+                'question_text' => 'Apa arti kata yang diucapkan?',
                 'question_type' => 'AU',
                 'audio_path' => 'audio/vocabularies/R.10.m4a',
             ],
