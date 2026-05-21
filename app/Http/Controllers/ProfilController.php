@@ -20,10 +20,10 @@ class ProfilController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:30'],
         ], [
             'name.required' => 'Nama tidak boleh kosong.',
-            'name.max' => 'Nama maksimal 255 karakter.',
+            'name.max' => 'Nama maksimal 30 karakter.',
         ]);
 
         if ($request->name === $request->user()->name) {
@@ -66,12 +66,13 @@ class ProfilController extends Controller
     {
         $request->validate([
             'current_password' => ['required'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password' => ['required', 'confirmed', 'max:100', Rules\Password::defaults()],
         ], [
             'current_password.required' => 'Kata sandi saat ini wajib diisi.',
             'password.required' => 'Kata sandi baru wajib diisi.',
             'password.confirmed' => 'Konfirmasi kata sandi tidak cocok.',
             'password.min' => 'Kata sandi minimal 8 karakter.',
+            'password.max' => 'Kata sandi maksimal 100 karakter.',
         ]);
 
         // Check if current password is true

@@ -58,7 +58,7 @@ class NewPasswordController extends Controller
         $request->validate([
             'token' => ['required'],
             'email' => ['required', 'email'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password' => ['required', 'confirmed', 'max:100', Rules\Password::defaults()],
         ], [
             'token.required' => 'Token tidak valid.',
             'email.required' => 'Email wajib diisi.',
@@ -66,6 +66,7 @@ class NewPasswordController extends Controller
             'password.required' => 'Kata sandi wajib diisi.',
             'password.confirmed' => 'Konfirmasi kata sandi tidak cocok.',
             'password.min' => 'Kata sandi minimal 8 karakter.',
+            'password.max' => 'Kata sandi maksimal 100 karakter.',
         ]);
 
         $isAuthenticated = Auth::check();

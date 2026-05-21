@@ -12,10 +12,10 @@ class CommentController extends Controller
     public function store(Request $request, Post $post)
     {
         $request->validate([
-            'comment_text' => 'required|string|max:2000',
+            'comment_text' => 'required|string|max:10000',
         ], [
             'comment_text.required' => 'Komentar tidak boleh kosong.',
-            'comment_text.max' => 'Komentar maksimal 2.000 karakter.',
+            'comment_text.max' => 'Komentar maksimal 10.000 karakter.',
         ]);
 
         $commentText = trim($request->comment_text);

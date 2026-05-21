@@ -41,14 +41,15 @@ class ForumController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
+            'title' => 'required|string|max:250',
+            'description' => 'required|string|max:40000',
             'tags' => 'required|array|min:1',
             'tags.*' => 'exists:tags,id',
         ], [
             'title.required' => 'Judul postingan wajib diisi.',
-            'title.max' => 'Judul maksimal terdiri dari 255 karakter.',
+            'title.max' => 'Judul postingan maksimal 250 karakter.',
             'description.required' => 'Deskripsi postingan wajib diisi.',
+            'description.max' => 'Deskripsi postingan maksimal 40.000 karakter.',
             'tags.required' => 'Pilih minimal 1 tag.',
             'tags.min' => 'Pilih minimal 1 tag.'
         ]);
