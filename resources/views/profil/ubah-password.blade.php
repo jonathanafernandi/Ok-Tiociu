@@ -136,11 +136,11 @@
                     </p>
 
                     {{-- Success message after email is sent --}}
-                    @if (session('status'))
+                    {{-- @if (session('status'))
                         <div class="alert alert-success py-2 px-3 mb-3" style="font-size: 0.9rem; border-radius: 8px;">
                             {{ session('status') }}
                         </div>
-                    @endif
+                    @endif --}}
 
                     {{-- Error message: token invalid/expired --}}
                     @if (session('status_error'))

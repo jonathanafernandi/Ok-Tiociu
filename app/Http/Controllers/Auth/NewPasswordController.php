@@ -58,7 +58,7 @@ class NewPasswordController extends Controller
         $request->validate([
             'token' => ['required'],
             'email' => ['required', 'email'],
-            'password' => ['required', 'confirmed', 'max:100', Rules\Password::defaults()],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ], [
             'token.required' => 'Token tidak valid.',
             'email.required' => 'Email wajib diisi.',

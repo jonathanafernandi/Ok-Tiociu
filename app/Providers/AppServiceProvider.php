@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Validation\Rules\Password;
 use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,5 +22,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Carbon::setLocale('id');
+
+        Password::defaults(function () {
+            return Password::min(8)->max(100);
+        });
     }
 }
