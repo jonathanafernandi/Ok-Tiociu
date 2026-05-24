@@ -23,7 +23,7 @@
 
                 {{-- Informasi akun --}}
                 <div class="text-center mb-3">
-                    <div class="fw-semibold" style="font-size: 1.125rem;"> {{ auth()->user()->email }}</div>
+                    <div class="fw-semibold profil-email" style="font-size: 1.125rem;"> {{ auth()->user()->email }}</div>
                     <div style="font-size: 1rem; font-weight: 500;">
                         Bergabung sejak
                         <span style="color: var(--ok-red); font-weight: 600;">

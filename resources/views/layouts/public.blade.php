@@ -25,8 +25,8 @@
 
     {{-- Global CSS --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    {{-- Authentication CSS
-    <link rel="stylesheet" href="{{ asset('css/auth.css') }}"> --}}
+    {{-- Authentication CSS --}}
+    <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
     {{-- Page-specific CSS --}}
     @yield('styles')
 </head>

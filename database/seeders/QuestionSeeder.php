@@ -908,7 +908,7 @@ class QuestionSeeder extends Seeder
                 'audio_path' => null,
             ],
             [
-                'question_text' => '"sêm" dalam bahasa Tiociu artinya rasa ....',
+                'question_text' => '"sem" dalam bahasa Tiociu artinya rasa ....',
                 'question_type' => 'PG',
                 'audio_path' => null,
             ],

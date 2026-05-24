@@ -75,8 +75,13 @@
                 {{-- Tombol Simpan --}}
                 <button type="submit" class="btn-ok-primary mb-3">Simpan</button>
 
-                {{-- Kembali ke halaman masuk --}}
-                <a href="{{ route('login') }}" class="btn-ok-secondary d-block text-center text-decoration-none">Kembali ke halaman Masuk &rarr;</a>
+                {{-- Kembali ke halaman sebelumnya --}}
+                @auth
+                    <a href="{{ route('profil.ubah-password') }}" class="btn-ok-secondary d-block text-center text-decoration-none">Kembali ke halaman Ubah Kata Sandi &rarr;</a>
+                @else
+                    <a href="{{ route('login') }}" class="btn-ok-secondary d-block text-center text-decoration-none">Kembali ke halaman Masuk &rarr;</a>
+                @endauth
+                
             </form>
         </div>
     </div>
