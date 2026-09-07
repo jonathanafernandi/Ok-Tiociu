@@ -1,59 +1,139 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Ok! Tiociu
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Ok! Tiociu** is a Laravel-based web application for learning basic Teochew language, developed as a medium for Chinese-Indonesian cultural preservation. It was built as a bachelor's thesis project at Bina Nusantara University, addressing the endangerment of the Teochew language among younger generations of the Chinese-Indonesian community.
 
-## About Laravel
+## Table of Contents
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [Background](#background)
+- [Live Demo](#live-demo)
+- [Tech Stack](#tech-stack)
+- [Development Methodology](#development-methodology)
+- [Database Structure](#database-structure)
+- [Getting Started](#getting-started)
+- [Features](#features)
+- [Usage Guide](#usage-guide)
+- [Evaluation Results](#evaluation-results)
+- [Author](#author)
+- [License](#license)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Background
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Teochew is one of five major Chinese-Indonesian sub-ethnic languages (alongside Hakka, Hokkien, Cantonese, and Hainanese), with roots tracing back to the Chaozhou, Jieyang, and Shantou regions of Guangdong, China. Due to historical suppression during Indonesia's New Order era and limited intergenerational transmission, the Teochew language faces a real risk of decline among younger Chinese-Indonesians.
 
-## Learning Laravel
+**Ok! Tiociu** was developed to make basic Teochew vocabulary and phrases accessible to anyone interested in learning, particularly younger generations seeking to reconnect with their ancestral language, while also providing a community space for discussion and knowledge-sharing about Teochew language and culture.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## Live Demo
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Check out the live site: [https://www.oktiociu.com](https://www.oktiociu.com)
 
-## Laravel Sponsors
+## Tech Stack
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+| Layer | Technology |
+|---|---|
+| Backend Framework | Laravel (PHP) |
+| Frontend | HTML, CSS, JavaScript, Bootstrap |
+| Database | MySQL |
+| Design Tool | Figma (UI design) |
+| Architecture Pattern | Model-View-Controller (MVC) |
 
-### Premium Partners
+## Development Methodology
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+This project was developed using the **Waterfall model**, structured into five phases:
 
-## Contributing
+1. **Communication**: Requirements gathering through literature review, analysis of similar applications (e.g., Basa Sunda e-learning, Sumba language learning app, Duolingo), and user needs questionnaires.
+2. **Planning**: Determining technology stack and development scheduling.
+3. **Modeling**: System design using Object-Oriented Analysis and Design (OOAD) with UML diagrams (use case, activity, class, and sequence diagrams), database design using Entity-Relationship Diagrams (ERD), and UI design in Figma.
+4. **Construction**: Coding the application according to the finalized design.
+5. **Deployment**: Black-box testing, UI evaluation (Eight Golden Rules of Interface Design), UX evaluation (Five Measurable Human Factors and System Usability Scale), and learning effectiveness evaluation.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Database Structure
 
-## Code of Conduct
+The application's MySQL database consists of 12 interrelated tables, including:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+| Table | Purpose |
+|---|---|
+| `users` | Stores registered user account data |
+| `password_reset_tokens` | Stores password reset tokens sent via email |
+| `topics` | Stores available Teochew learning topics |
+| `vocabularies` | Stores Teochew vocabulary/phrases, Indonesian translations, audio paths, and image paths per topic |
+| *(additional tables)* | Support quiz questions, forum posts, comments, and likes |
 
-## Security Vulnerabilities
+## Getting Started
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Prerequisites
+
+- PHP 8.1+
+- Composer
+- MySQL
+
+### Installation
+
+```bash
+git clone https://github.com/jonathanafernandi/Ok-Tiociu.git
+cd Ok-Tiociu
+composer install
+cp .env.example .env
+php artisan key:generate
+```
+
+Configure your database credentials in `.env`, then run:
+
+```bash
+php artisan migrate --seed
+php artisan serve
+```
+
+Visit `http://localhost:8000` to access the application.
+
+## Features
+
+### Learning Materials
+- Browse a list of learning topics (e.g., Pronouns, Greetings, Numbers, Family, Food, Colors, Animals, and more).
+- View vocabulary and phrases for each topic, complete with Indonesian translations, pronunciation audio, and illustrative images.
+
+### Practice Exercises (Quiz)
+- Take topic-based quizzes to reinforce vocabulary retention.
+- Receive immediate feedback on whether an answer is correct or incorrect, including the correct answer when needed.
+- Quiz questions may include pronunciation audio playback.
+
+### Discussion Forum
+- Browse forum posts related to Teochew and Chinese-Indonesian language and culture.
+- Filter posts by tag and switch between tabs.
+- Create new posts with a title, description, and tags.
+- Comment on posts and view post details.
+- Like or unlike posts and comments.
+- Delete your own posts and comments (with confirmation dialogs).
+
+### Account Management
+- Register a new account and log in with email and password.
+- Reset a forgotten password via an emailed reset link.
+- View and edit profile information (name).
+- Change account password.
+- Log out securely.
+
+## Usage Guide
+
+1. **Register/Login**: New users register with full name, email, password, and address. Existing users log in with email and password.
+2. **Browse Topics**: View the list of available Teochew learning topics on the learning page.
+3. **Study Vocabulary**: Open a topic to view vocabulary and phrases with translations, audio pronunciation, and images.
+4. **Practice**: Start a quiz for the selected topic, answer questions, and receive immediate feedback.
+5. **Discuss**: Visit the forum to read, create, comment on, and like posts related to Teochew language and culture.
+6. **Manage Profile**: Update your name, change your password, or log out from the profile page.
+
+## Evaluation Results
+
+The application was evaluated through multiple methods as part of the thesis research:
+
+- **Black-box testing** confirmed that all features function as intended.
+- **UI evaluation** was conducted using the Eight Golden Rules of Interface Design.
+- **UX evaluation** using the Five Measurable Human Factors and the System Usability Scale (SUS) yielded an average SUS score of **86.6**, indicating excellent usability.
+- **Learning effectiveness evaluation** (via pretest/posttest) showed measurable improvement in users' understanding of basic Teochew vocabulary after using the application.
+
+## Author
+
+**Jonathan Alvindo Fernandi**  
+Bachelor of Computing in Computer Science, School of Computer Science, Bina Nusantara University
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project was developed for academic purposes as part of a bachelor's thesis. Please contact the author before reusing this codebase for purposes beyond personal reference or academic review.
